@@ -19,12 +19,19 @@ export default function Home() {
   const handleSearch = async (query: string) => {
     setIsLoading(true);
     setCurrentQuery(query);
+    setResult(null); // Clear previous result
     try {
       // Removed simulated delay for production speed
       // await new Promise(resolve => setTimeout(resolve, 5000));
 
-      const response = await fetch(API_ENDPOINTS.getMeme(query));
+      const response = await fetch(API_ENDPOINTS.getMeme(query), {
+        cache: 'no-store', // Prevent caching
+        headers: {
+          'Cache-Control': 'no-cache',
+        },
+      });
       const data = await response.json();
+      console.log('Search result:', data); // Debug log
       setResult(data);
     } catch (error) {
       console.error("Search failed:", error);

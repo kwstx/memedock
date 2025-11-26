@@ -19,14 +19,21 @@ export default function SearchPage() {
         if (!query.trim()) return;
 
         setIsLoading(true);
+        setResult(null); // Clear previous result
         try {
             // Simulate loading for effect
             await new Promise(resolve => setTimeout(resolve, 3000));
 
-            const response = await fetch(API_ENDPOINTS.getMeme(query));
+            const response = await fetch(API_ENDPOINTS.getMeme(query), {
+                cache: 'no-store',
+                headers: {
+                    'Cache-Control': 'no-cache',
+                },
+            });
             if (!response.ok) throw new Error("Failed to fetch");
 
             const data = await response.json();
+            console.log('Search result:', data);
             setResult(data);
         } catch (error) {
             console.error("Search failed:", error);

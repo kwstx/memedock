@@ -11,7 +11,11 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # Allow all origins for dev
+    allow_origins=[
+        "https://memedock.vercel.app",  # Production frontend
+        "http://localhost:3000",  # Local development
+        "*"  # Allow all for now (remove this later for security)
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, RefreshCw, Download, Share2, Sparkles, MessageSquare, Type, Move } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
+import { API_ENDPOINTS } from "@/lib/api";
 
 interface MemeResult {
     image_url: string;
@@ -61,7 +62,7 @@ export default function MemeDisplay({ result, query, onClose }: MemeDisplayProps
 
     // Determine the image source URL
     const imageUrl = result.image_url
-        ? (result.image_url.startsWith("http") ? result.image_url : `http://127.0.0.1:8000${result.image_url}`)
+        ? (result.image_url.startsWith("http") ? result.image_url : `${API_ENDPOINTS.root()}${result.image_url}`)
         : null;
 
     if (!imageUrl) {
@@ -94,7 +95,7 @@ export default function MemeDisplay({ result, query, onClose }: MemeDisplayProps
         // Use proxy for external images to avoid CORS issues
         const isExternal = imageUrl.startsWith('http') && !imageUrl.includes('127.0.0.1:8000') && !imageUrl.includes('localhost:8000');
         const fetchUrl = isExternal
-            ? `http://127.0.0.1:8000/proxy-image?url=${encodeURIComponent(imageUrl)}`
+            ? API_ENDPOINTS.proxyImage(imageUrl)
             : imageUrl;
 
         try {
@@ -262,103 +263,110 @@ export default function MemeDisplay({ result, query, onClose }: MemeDisplayProps
                         >
                             <button
                                 onClick={onClose}
-                                className="flex items-center gap-2 text-gray-500 hover:text-gray-900 transition-colors mb-8 group"
+                                className="mb-8 flex items-center text-gray-500 hover:text-gray-900 transition-colors group"
                             >
-                                <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+                                <ArrowLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" />
                                 Back to Search
                             </button>
 
-                            <h1 className="text-4xl md:text-5xl font-bold mb-8 font-serif-premium">
-                                <span className="text-gray-900">
-                                    Perfect Match Found
+                            <div className="mb-8">
+                                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-bold mb-4">
+                                    {result.score ? `${Math.round(result.score * 100)}% Match` : 'Meme Found'}
                                 </span>
-                            </h1>
-
-                            {/* Context Box */}
-                            <div className="bg-blue-50/50 rounded-2xl p-6 mb-6 border border-blue-100">
-                                <div className="flex items-center gap-3 mb-2">
-                                    <MessageSquare className="w-5 h-5 text-blue-600" />
-                                    <h3 className="font-semibold text-blue-900 font-serif-premium">Your Context</h3>
-                                </div>
-                                <p className="text-blue-800 text-lg">"{query}"</p>
-                            </div>
-
-                            {/* Explanation Box */}
-                            <div className="bg-purple-50/50 rounded-2xl p-6 mb-10 border border-purple-100">
-                                <div className="flex items-center gap-3 mb-2">
-                                    <Sparkles className="w-5 h-5 text-purple-600" />
-                                    <h3 className="font-semibold text-purple-900 font-serif-premium">Why this fits</h3>
-                                </div>
-                                <p className="text-purple-800 leading-relaxed">
-                                    {result.explanation || "This meme perfectly captures the sentiment of your request. The visual expression combined with the context creates a highly relatable reaction that matches the specific vibe you described."}
+                                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-serif-premium leading-tight">
+                                    {result.metadata?.tags?.[0] ? result.metadata.tags[0].charAt(0).toUpperCase() + result.metadata.tags[0].slice(1) : "Meme Result"}
+                                </h2>
+                                <p className="text-xl text-gray-600 leading-relaxed">
+                                    {result.explanation || "Here is the meme you requested."}
                                 </p>
                             </div>
 
                             {/* Caption Input */}
-                            {showCaptionInput && (
-                                <motion.div
-                                    initial={{ opacity: 0, height: 0 }}
-                                    animate={{ opacity: 1, height: 'auto' }}
-                                    className="mb-6"
-                                >
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">Add Caption</label>
-                                    <div className="flex gap-2 mb-4">
-                                        <input
-                                            type="text"
-                                            value={captionText}
-                                            onChange={(e) => setCaptionText(e.target.value)}
-                                            placeholder="Type your caption here..."
-                                            className="flex-1 px-4 py-3 text-gray-900 font-medium rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
-                                        />
-                                        <button
-                                            onClick={() => setShowTextBackground(!showTextBackground)}
-                                            className={`px-4 py-3 rounded-xl font-bold transition-colors border ${showTextBackground ? 'bg-black text-white border-black' : 'bg-white text-gray-700 border-gray-200 hover:bg-gray-50'}`}
-                                            title="Toggle Background"
-                                        >
-                                            <div className="w-6 h-6 flex items-center justify-center border border-current bg-current">
-                                                <span className={`text-xs ${showTextBackground ? 'text-black bg-white' : 'text-white bg-black'} px-1`}>A</span>
-                                            </div>
-                                        </button>
-                                    </div>
-                                    <div>
-                                        <label className="block text-xs font-medium text-gray-500 mb-2">Text Size</label>
-                                        <input
-                                            type="range"
-                                            min="0.5"
-                                            max="2"
-                                            step="0.1"
-                                            value={textSize}
-                                            onChange={(e) => setTextSize(parseFloat(e.target.value))}
-                                            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
-                                        />
-                                    </div>
-                                </motion.div>
-                            )}
-
-                            {/* Action Buttons */}
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="mb-8 space-y-4">
                                 <button
                                     onClick={() => setShowCaptionInput(!showCaptionInput)}
-                                    className={`flex items-center justify-center gap-2 py-4 px-6 rounded-xl font-bold transition-colors ${showCaptionInput ? 'bg-blue-100 text-blue-700' : 'bg-gray-100 text-gray-900 hover:bg-gray-200'}`}
+                                    className="flex items-center gap-2 text-blue-600 font-bold hover:text-blue-700 transition-colors"
                                 >
                                     <Type className="w-5 h-5" />
-                                    {showCaptionInput ? 'Hide Text' : 'Add Text'}
+                                    {showCaptionInput ? "Hide Caption Tools" : "Add Caption"}
                                 </button>
+
+                                <AnimatePresence>
+                                    {showCaptionInput && (
+                                        <motion.div
+                                            initial={{ height: 0, opacity: 0 }}
+                                            animate={{ height: "auto", opacity: 1 }}
+                                            exit={{ height: 0, opacity: 0 }}
+                                            className="overflow-hidden"
+                                        >
+                                            <div className="bg-gray-50 p-4 rounded-xl space-y-4">
+                                                <input
+                                                    type="text"
+                                                    value={captionText}
+                                                    onChange={(e) => setCaptionText(e.target.value)}
+                                                    placeholder="Enter your caption..."
+                                                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                                                />
+
+                                                <div className="flex items-center gap-4">
+                                                    <div className="flex-1">
+                                                        <label className="text-xs font-bold text-gray-500 mb-1 block">Size</label>
+                                                        <input
+                                                            type="range"
+                                                            min="0.5"
+                                                            max="2"
+                                                            step="0.1"
+                                                            value={textSize}
+                                                            onChange={(e) => setTextSize(parseFloat(e.target.value))}
+                                                            className="w-full"
+                                                        />
+                                                    </div>
+                                                    <button
+                                                        onClick={() => setShowTextBackground(!showTextBackground)}
+                                                        className={`px-3 py-2 rounded-lg text-sm font-bold transition-colors ${showTextBackground
+                                                                ? 'bg-black text-white'
+                                                                : 'bg-white text-gray-700 border border-gray-200'
+                                                            }`}
+                                                    >
+                                                        Bg
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </div>
+
+                            <div className="flex flex-col sm:flex-row gap-4">
                                 <button
                                     onClick={handleSave}
-                                    className="flex items-center justify-center gap-2 py-4 px-6 bg-gray-900 text-white rounded-xl font-bold hover:bg-gray-800 transition-colors shadow-lg shadow-gray-900/20"
+                                    className="flex-1 px-8 py-4 bg-gray-900 text-white rounded-xl font-bold hover:bg-gray-800 transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center shadow-lg hover:shadow-xl"
                                 >
-                                    <Download className="w-5 h-5" />
-                                    Save Image
+                                    <Download className="w-5 h-5 mr-2" />
+                                    Download Meme
                                 </button>
-                                <button
-                                    onClick={onClose}
-                                    className="col-span-2 flex items-center justify-center gap-2 py-4 px-6 bg-white border-2 border-gray-100 text-gray-900 rounded-xl font-bold hover:border-gray-300 transition-colors"
-                                >
-                                    <RefreshCw className="w-5 h-5" />
-                                    Try Another
+                                <button className="px-8 py-4 bg-white text-gray-900 border-2 border-gray-100 rounded-xl font-bold hover:bg-gray-50 transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center">
+                                    <Share2 className="w-5 h-5 mr-2" />
+                                    Share
                                 </button>
                             </div>
+
+                            {/* Semantic Tags */}
+                            {result.metadata?.tags && (
+                                <div className="mt-10 pt-8 border-t border-gray-100">
+                                    <div className="flex items-center gap-2 mb-4 text-sm font-bold text-gray-400 uppercase tracking-wider">
+                                        <Sparkles className="w-4 h-4" />
+                                        Semantic Tags
+                                    </div>
+                                    <div className="flex flex-wrap gap-2">
+                                        {result.metadata.tags.map((tag: string) => (
+                                            <span key={tag} className="px-4 py-2 bg-gray-50 text-gray-600 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors cursor-default">
+                                                #{tag}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
                         </motion.div>
                     </div>
                 </div>

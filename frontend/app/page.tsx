@@ -20,8 +20,8 @@ export default function Home() {
     setIsLoading(true);
     setCurrentQuery(query);
     try {
-      // Simulate 5 second loading delay as requested
-      await new Promise(resolve => setTimeout(resolve, 5000));
+      // Removed simulated delay for production speed
+      // await new Promise(resolve => setTimeout(resolve, 5000));
 
       const response = await fetch(API_ENDPOINTS.getMeme(query));
       const data = await response.json();

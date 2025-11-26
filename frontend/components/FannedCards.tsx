@@ -15,8 +15,8 @@ export default function FannedCards() {
             </div>
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">
-                <div className="flex justify-center items-center h-[400px]">
-                    <div className="relative w-[300px] h-[400px] scale-75 md:scale-100">
+                <div className="flex justify-center items-center h-[300px] md:h-[400px]">
+                    <div className="relative w-[300px] h-[400px] scale-[0.6] md:scale-100">
                         {/* Left Card - Rabbit */}
                         <motion.div
                             initial={{ opacity: 0, x: -50, rotate: -20 }}

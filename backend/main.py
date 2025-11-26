@@ -18,7 +18,8 @@ app.add_middleware(
 )
 
 # Initialize Search Engine
-base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Use current directory as base (works both locally and on Railway)
+base_dir = os.path.dirname(os.path.abspath(__file__))
 search_engine = SearchEngine(base_dir)
 external_fetcher = ExternalMemeFetcher()
 

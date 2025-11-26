@@ -8,7 +8,7 @@ import numpy as np
 class ExternalMemeFetcher:
     def __init__(self):
         self.reddit = None
-        self.model = SentenceTransformer('all-MiniLM-L6-v2')
+        self.model = None
         
         # Initialize Reddit if credentials exist
         client_id = os.getenv('REDDIT_CLIENT_ID')
@@ -27,6 +27,12 @@ class ExternalMemeFetcher:
                 print(f"Failed to initialize Reddit API: {e}")
         else:
             print("Reddit credentials not found. Using JSON fallback.")
+
+    def _get_model(self):
+        if self.model is None:
+            print("Loading SentenceTransformer model (Fallback)...")
+            self.model = SentenceTransformer('all-MiniLM-L6-v2')
+        return self.model
 
     def search_external(self, query):
         print(f"Searching external sources for: {query}")
@@ -114,11 +120,12 @@ class ExternalMemeFetcher:
             return None
             
         # Encode query
-        query_embedding = self.model.encode(query)
+        model = self._get_model()
+        query_embedding = model.encode(query)
         
         # Encode candidates
         captions = [c['caption'] for c in candidates]
-        candidate_embeddings = self.model.encode(captions)
+        candidate_embeddings = model.encode(captions)
         
         # Calculate similarities
         similarities = np.dot(candidate_embeddings, query_embedding)

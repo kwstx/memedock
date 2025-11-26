@@ -19,17 +19,23 @@ class SearchEngine:
         self.image_names = [item['image_name'] for item in self.embeddings_data]
         self.embeddings_matrix = np.array([item['embedding'] for item in self.embeddings_data])
         
-        print("Loading SentenceTransformer model...")
-        self.model = SentenceTransformer('all-MiniLM-L6-v2')
-        print("SearchEngine initialized.")
+        print("SearchEngine initialized (Model will load on first search).")
+        self.model = None
 
     def _load_json(self, path):
         with open(path, 'r') as f:
             return json.load(f)
 
+    def _get_model(self):
+        if self.model is None:
+            print("Loading SentenceTransformer model...")
+            self.model = SentenceTransformer('all-MiniLM-L6-v2')
+        return self.model
+
     def search(self, query, threshold=0.3):
         # Encode query
-        query_embedding = self.model.encode(query)
+        model = self._get_model()
+        query_embedding = model.encode(query)
         
         # Calculate cosine similarity
         # Cosine Similarity = (A . B) / (||A|| * ||B||)

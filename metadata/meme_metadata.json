@@ -1,0 +1,569 @@
+{
+  "memes": [
+    {
+      "image_name": "Grok_Explain_This_meme_cover.jpg",
+      "category": "funny",
+      "tags": [
+        "grok",
+        "ai",
+        "twitter",
+        "explain this"
+      ],
+      "prompt": "Grok AI explaining a meme or situation",
+      "captions": [
+        "Me asking AI to explain my life choices",
+        "When you see a meme so deep you need an LLM to decode it",
+        "Grok analyzing why I'm still single",
+        "Explaining the joke to your parents be like"
+      ]
+    },
+    {
+      "image_name": "ai-baby.gif",
+      "category": "weird",
+      "tags": [
+        "ai",
+        "baby",
+        "uncanny",
+        "gif"
+      ],
+      "prompt": "AI generated baby with weird movements",
+      "captions": [
+        "When the code compiles but the output is cursed",
+        "Me trying to act natural in social situations",
+        "AI video generation in 2023 be like",
+        "The demon in my room at 3 AM vibing"
+      ],
+      "upvotes": 2,
+      "downvotes": 1
+    },
+    {
+      "image_name": "baby-covering-mouth.jpg",
+      "category": "wholesome",
+      "tags": [
+        "baby",
+        "oops",
+        "shock",
+        "cute"
+      ],
+      "prompt": "Baby covering mouth in shock or hiding a laugh",
+      "captions": [
+        "When you accidentally roast someone too hard",
+        "Me when I hear the tea but promised not to say anything",
+        "Oops I did it again",
+        "Trying not to laugh at a funeral"
+      ],
+      "downvotes": 8,
+      "upvotes": 7
+    },
+    {
+      "image_name": "bald-jd-vance.jpg",
+      "category": "funny",
+      "tags": [
+        "jd vance",
+        "politics",
+        "bald",
+        "edit"
+      ],
+      "prompt": "Edited image of JD Vance looking bald",
+      "captions": [
+        "When the stress of the campaign hits different",
+        "Lex Luthor origin story looking wild",
+        "Me after one week of engineering school",
+        "Barber: What you want? Him: Just ruin my life"
+      ],
+      "upvotes": 3,
+      "downvotes": 2
+    },
+    {
+      "image_name": "bcspongecover.jpg",
+      "category": "funny",
+      "tags": [
+        "spongebob",
+        "caveman",
+        "primitive",
+        "reaction"
+      ],
+      "prompt": "Primitive SpongeBob or SpongeBob reaction",
+      "captions": [
+        "Me when the internet goes down for 5 minutes",
+        "When you wake up from a nap and don't know what year it is",
+        "Society if we didn't have coffee",
+        "Confused unga bunga noises"
+      ],
+      "upvotes": 1
+    },
+    {
+      "image_name": "clankerisourword.jpg",
+      "category": "funny",
+      "tags": [
+        "star wars",
+        "clanker",
+        "droid",
+        "prequel memes"
+      ],
+      "prompt": "Star Wars meme about the word Clanker",
+      "captions": [
+        "You can't say the C-word!",
+        "Droid rights activists be like",
+        "When your friend uses the hard R in Clanker",
+        "Roger Roger but with attitude"
+      ],
+      "upvotes": 1
+    },
+    {
+      "image_name": "congrats_happy_for_you_meme_cover.jpg",
+      "category": "sarcastic",
+      "tags": [
+        "congrats",
+        "happy for you",
+        "jealousy",
+        "reaction"
+      ],
+      "prompt": "Person saying congrats but might be jealous",
+      "captions": [
+        "Me watching my friends get into relationships",
+        "Congrats (I hate you)",
+        "Lord, I've seen what you've done for others",
+        "Smiling through the pain"
+      ]
+    },
+    {
+      "image_name": "cover7.jpg",
+      "category": "random",
+      "tags": [
+        "meme",
+        "cover",
+        "unknown"
+      ],
+      "prompt": "Generic meme cover image",
+      "captions": [
+        "When you don't know what caption to put",
+        "Bottom text",
+        "Sample text goes here",
+        "Me when I run out of meme ideas"
+      ],
+      "downvotes": 3,
+      "upvotes": 2
+    },
+    {
+      "image_name": "doakescover.jpg",
+      "category": "funny",
+      "tags": [
+        "dexter",
+        "doakes",
+        "surprise",
+        "motherfucker"
+      ],
+      "prompt": "Sgt Doakes from Dexter saying Surprise Motherfucker",
+      "captions": [
+        "When the deadline sneaks up on you",
+        "Surprise, motherfucker!",
+        "Me finding the bug I fixed yesterday is back",
+        "When you think you're home alone but hear a noise"
+      ]
+    },
+    {
+      "image_name": "fahcover.jpg",
+      "category": "random",
+      "tags": [
+        "meme",
+        "cover",
+        "unknown"
+      ],
+      "prompt": "Generic meme cover image",
+      "captions": [
+        "Just a random cover image",
+        "Waiting for the real meme to load",
+        "404 Caption not found",
+        "This space intentionally left blank"
+      ]
+    },
+    {
+      "image_name": "gen-z-stare.jpg",
+      "category": "relatable",
+      "tags": [
+        "gen z",
+        "stare",
+        "awkward",
+        "zoomer"
+      ],
+      "prompt": "The awkward Gen Z stare reaction",
+      "captions": [
+        "Me listening to a boomer explain how easy it is to buy a house",
+        "When someone says 'skibidi' unironically",
+        "The stare I give the microwave at 2 AM",
+        "Pov: You just said something cringe"
+      ]
+    },
+    {
+      "image_name": "guy-pointing-at-himself.jpg",
+      "category": "funny",
+      "tags": [
+        "pointing",
+        "me",
+        "confidence",
+        "reaction"
+      ],
+      "prompt": "Guy pointing at himself confidently",
+      "captions": [
+        "Who's awesome? This guy",
+        "When the teacher asks who didn't do the homework",
+        "Guess who just made a bad decision",
+        "Me nominating myself for a task I can't do"
+      ]
+    },
+    {
+      "image_name": "hope-shot-soyjak.jpg",
+      "category": "funny",
+      "tags": [
+        "soyjak",
+        "hope",
+        "wojak",
+        "meme"
+      ],
+      "prompt": "Soyjak looking hopeful or pointing",
+      "captions": [
+        "Me spotting a dog across the street",
+        "When the waiter brings the food",
+        "Look! A distraction!",
+        "Soyjak pointing at literally anything"
+      ]
+    },
+    {
+      "image_name": "khaby-lame-mechanism.jpg",
+      "category": "funny",
+      "tags": [
+        "khaby lame",
+        "simple",
+        "hands",
+        "reaction"
+      ],
+      "prompt": "Khaby Lame showing a simple solution with hand gesture",
+      "captions": [
+        "It's not that hard",
+        "Why complicate things?",
+        "Me showing my mom how to use the remote",
+        "Common sense isn't so common"
+      ]
+    },
+    {
+      "image_name": "michael-jordan-no-no-no.jpg",
+      "category": "funny",
+      "tags": [
+        "michael jordan",
+        "no",
+        "denial",
+        "stop"
+      ],
+      "prompt": "Michael Jordan wagging finger saying no",
+      "captions": [
+        "Stop it. Get some help.",
+        "Me to my bank account when I want to buy something",
+        "Not today, Satan",
+        "When someone asks if I'm free this weekend"
+      ]
+    },
+    {
+      "image_name": "nailong-dancing-gif.jpg",
+      "category": "funny",
+      "tags": [
+        "nailong",
+        "dragon",
+        "dancing",
+        "yellow"
+      ],
+      "prompt": "Yellow dragon Nailong dancing",
+      "captions": [
+        "Me when the food arrives",
+        "Vibing to the elevator music",
+        "Brain empty, just dancing dragon",
+        "Friday feeling be like"
+      ]
+    },
+    {
+      "image_name": "pibble.jpg",
+      "category": "wholesome",
+      "tags": [
+        "pitbull",
+        "dog",
+        "cute",
+        "smile"
+      ],
+      "prompt": "Cute pitbull dog smiling",
+      "captions": [
+        "Feeling cute, might delete later",
+        "When you get called a good boy",
+        "The face I make when I want treats",
+        "Pitbulls according to the media vs reality"
+      ]
+    },
+    {
+      "image_name": "rabbit-clock-meme.jpg",
+      "category": "funny",
+      "tags": [
+        "rabbit",
+        "clock",
+        "late",
+        "time"
+      ],
+      "prompt": "Rabbit with a clock, running late",
+      "captions": [
+        "Me running late to an event I didn't want to go to",
+        "I'm late! I'm late!",
+        "When you realize it's Sunday night",
+        "Time is an illusion (and I'm wasting it)"
+      ]
+    },
+    {
+      "image_name": "retroslopcover.jpg",
+      "category": "funny",
+      "tags": [
+        "retro",
+        "slop",
+        "art",
+        "meme"
+      ],
+      "prompt": "Retro style meme or art",
+      "captions": [
+        "Nostalgia hitting hard",
+        "Reject modernity, embrace retro slop",
+        "Looks like a bad 80s album cover",
+        "Aesthetic vibes only"
+      ]
+    },
+    {
+      "image_name": "rigrig.jpg",
+      "category": "funny",
+      "tags": [
+        "rigby",
+        "regular show",
+        "raccoon",
+        "meme"
+      ],
+      "prompt": "Rigby from Regular Show",
+      "captions": [
+        "Hamboning will save your life one day",
+        "Me trying to fix the mess I made",
+        "Rigby being Rigby",
+        "When you and your bro do something stupid"
+      ]
+    },
+    {
+      "image_name": "smart-guy-with-glasses.jpg",
+      "category": "funny",
+      "tags": [
+        "smart",
+        "nerd",
+        "glasses",
+        "actually"
+      ],
+      "prompt": "Smart guy with glasses explaining something",
+      "captions": [
+        "Um, actually...",
+        "Me explaining the lore of a video game",
+        "When you correct the teacher",
+        "Ackchyually"
+      ]
+    },
+    {
+      "image_name": "sybau-lazer-dim.jpg",
+      "category": "funny",
+      "tags": [
+        "lazer dim",
+        "rapper",
+        "meme",
+        "reaction"
+      ],
+      "prompt": "Lazer Dim 700 meme",
+      "captions": [
+        "Shut your b*tch ass up",
+        "When someone keeps talking during the movie",
+        "Me to the voices in my head",
+        "Lazer Dim energy"
+      ]
+    },
+    {
+      "image_name": "thinking.jpg",
+      "category": "relatable",
+      "tags": [
+        "thinking",
+        "pondering",
+        "hmmm",
+        "smart"
+      ],
+      "prompt": "Man pointing to head thinking",
+      "captions": [
+        "Can't be broke if you don't check your bank account",
+        "Modern problems require modern solutions",
+        "Me overthinking a simple text",
+        "Big brain time"
+      ]
+    },
+    {
+      "image_name": "wally-west-pose.jpg",
+      "category": "funny",
+      "tags": [
+        "wally west",
+        "flash",
+        "grave",
+        "peace"
+      ],
+      "prompt": "Wally West Flash posing over grave",
+      "captions": [
+        "Me posing next to my buried hopes and dreams",
+        "When you finish a project 1 minute before the deadline",
+        "RIP to the haters",
+        "Peace out"
+      ]
+    },
+    {
+      "image_name": "what-is-diddy-blud-doing.jpg",
+      "category": "funny",
+      "tags": [
+        "diddy",
+        "blud",
+        "confusion",
+        "reaction"
+      ],
+      "prompt": "Reaction meme asking what is he doing",
+      "captions": [
+        "What is blud doing?",
+        "Me watching my teammate throw the game",
+        "Confusion 100",
+        "Bro thinks he's on the team"
+      ]
+    },
+    {
+      "image_name": "48DDAF8C-5944-45D4-988B-F24B0F7FF212.jpeg",
+      "category": "random",
+      "tags": [
+        "random",
+        "unknown",
+        "meme"
+      ],
+      "prompt": "Random meme image",
+      "captions": [
+        "When you find a random image in your camera roll",
+        "Context needed",
+        "Just vibes",
+        "Meme from the void"
+      ]
+    },
+    {
+      "image_name": "cover5.jpg",
+      "category": "random",
+      "tags": [
+        "meme",
+        "cover",
+        "unknown"
+      ],
+      "prompt": "Generic meme cover image",
+      "captions": [
+        "Another cover image",
+        "Waiting for content",
+        "Insert funny text here",
+        "Loading meme..."
+      ]
+    },
+    {
+      "image_name": "dog_closing_eyes_meme_cover.jpg",
+      "category": "wholesome",
+      "tags": [
+        "dog",
+        "closing eyes",
+        "happy",
+        "peaceful"
+      ],
+      "prompt": "Dog closing eyes looking happy or suspicious",
+      "captions": [
+        "Inner peace",
+        "When the sun hits just right",
+        "Me pretending to sleep when mom comes in",
+        "Suspicious doggo"
+      ]
+    },
+    {
+      "image_name": "ekc.jpg",
+      "category": "funny",
+      "tags": [
+        "meme",
+        "funny",
+        "unknown"
+      ],
+      "prompt": "Funny meme image",
+      "captions": [
+        "Laughing at my own jokes",
+        "When something is actually funny",
+        "Lol",
+        "Lmao even"
+      ]
+    },
+    {
+      "image_name": "jakingitcover.jpg",
+      "category": "funny",
+      "tags": [
+        "meme",
+        "reaction",
+        "funny"
+      ],
+      "prompt": "Funny reaction meme",
+      "captions": [
+        "My honest reaction",
+        "Live reaction",
+        "When you see something cursed",
+        "Bruh moment"
+      ]
+    },
+    {
+      "image_name": "reading_paper_meme_cover.jpg",
+      "category": "funny",
+      "tags": [
+        "reading",
+        "paper",
+        "tom",
+        "newspaper"
+      ],
+      "prompt": "Character reading a newspaper",
+      "captions": [
+        "Me looking for who asked",
+        "Reading the terms and conditions like",
+        "When you see your name in the group chat",
+        "Interesting..."
+      ]
+    },
+    {
+      "image_name": "ts-this.jpg",
+      "category": "reaction",
+      "tags": [
+        "this",
+        "pointing",
+        "agreement",
+        "reaction"
+      ],
+      "prompt": "Reaction image signifying agreement or 'this'",
+      "captions": [
+        "This right here",
+        "I agree with this statement",
+        "Facts",
+        "Say it louder for the people in the back"
+      ]
+    },
+    {
+      "image_name": "university-of-waterloo-meme.jpg",
+      "category": "relatable",
+      "tags": [
+        "university of waterloo",
+        "student",
+        "exam",
+        "stress"
+      ],
+      "prompt": "Meme related to University of Waterloo",
+      "captions": [
+        "Average Waterloo student experience",
+        "Why is there a goose chasing me?",
+        "Exam season be like",
+        "Cali or bust"
+      ]
+    }
+  ]
+}

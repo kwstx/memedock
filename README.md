@@ -1,0 +1,105 @@
+# MemeDock - AI-Powered Meme Search Engine
+
+A semantic meme search engine powered by AI that understands context and meaning, not just keywords.
+
+## 🚀 Features
+
+- **AI-Powered Search**: Uses SentenceTransformer to understand semantic meaning
+- **External Fallback**: Searches Reddit and Imgflip when local vault doesn't have matches
+- **Community Features**: Vote on memes, submit your own
+- **Beautiful UI**: Premium, mobile-responsive design with glassmorphism
+- **Meme Customization**: Add captions, adjust text, download with edits
+
+## 🛠️ Tech Stack
+
+**Frontend:**
+- Next.js 16 (React)
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+
+**Backend:**
+- FastAPI (Python)
+- SentenceTransformers (AI)
+- NumPy
+- PRAW (Reddit API)
+
+## 📦 Local Development
+
+### Prerequisites
+- Node.js 18+ and npm
+- Python 3.10+
+- Git
+
+### Setup
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/YOUR_USERNAME/memehub.git
+cd memehub
+```
+
+2. **Backend Setup**
+```bash
+cd backend
+pip install -r requirements.txt
+python -m uvicorn main:app --reload --port 8000
+```
+
+3. **Frontend Setup**
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+4. **Access the app**
+- Frontend: http://localhost:3000
+- Backend API: http://localhost:8000
+
+## 🌐 Deployment
+
+See [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) for detailed deployment instructions.
+
+**Quick Deploy:**
+- Frontend → Vercel
+- Backend → Railway
+- Total Cost: Free tier available
+
+## 📁 Project Structure
+
+```
+meme_vault/
+├── backend/
+│   ├── main.py              # FastAPI app
+│   ├── search_engine.py     # AI search logic
+│   ├── fallback.py          # External meme fetching
+│   └── requirements.txt     # Python dependencies
+├── frontend/
+│   ├── app/                 # Next.js pages
+│   ├── components/          # React components
+│   └── public/              # Static assets
+├── images/                  # Meme image files
+├── metadata/
+│   ├── meme_metadata.json   # Meme information
+│   └── meme_embeddings.json # AI embeddings
+└── scripts/                 # Utility scripts
+```
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+MIT License - feel free to use this project for learning or your own projects!
+
+## 🙏 Acknowledgments
+
+- SentenceTransformers for the AI model
+- The meme community for inspiration
+- All contributors and users
+
+---
+
+Built with ❤️ by an ambitious teenager learning to code

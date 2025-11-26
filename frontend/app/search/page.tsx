@@ -153,14 +153,14 @@ export default function SearchPage() {
                             <button
                                 type="submit"
                                 disabled={isLoading}
-                                className="flex items-center gap-2 px-8 py-3 bg-blue-600 text-white rounded-full font-bold text-lg shadow-lg hover:bg-blue-700 hover:shadow-blue-200 hover:scale-105 active:scale-95 transition-all duration-300 disabled:opacity-70 disabled:scale-100"
+                                className="flex items-center gap-1 md:gap-2 px-3 md:px-8 py-2 md:py-3 bg-blue-600 text-white rounded-full font-bold text-sm md:text-lg shadow-lg hover:bg-blue-700 hover:shadow-blue-200 hover:scale-105 active:scale-95 transition-all duration-300 disabled:opacity-70 disabled:scale-100"
                             >
                                 {isLoading ? (
-                                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                                    <div className="w-4 h-4 md:w-5 md:h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
                                 ) : (
-                                    <Sparkles className="w-5 h-5" />
+                                    <Sparkles className="w-4 h-4 md:w-5 md:h-5" />
                                 )}
-                                {isLoading ? "Searching..." : "Start"}
+                                <span className="hidden sm:inline">{isLoading ? "Searching..." : "Start"}</span>
                             </button>
                         </div>
                     </form>

@@ -61,7 +61,7 @@ export default function Hero({ onSearch, isLoading }: HeroProps) {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Describe the meme..."
-                className="w-full py-3 md:py-6 pl-10 md:pl-16 pr-20 md:pr-32 text-sm md:text-lg text-gray-900 font-medium bg-transparent border-none focus:ring-0 rounded-2xl placeholder:text-gray-400"
+                className="w-full py-3 md:py-6 pl-14 md:pl-16 pr-20 md:pr-32 text-sm md:text-lg text-gray-900 font-medium bg-transparent border-none focus:ring-0 rounded-2xl placeholder:text-gray-400"
               />
               <button
                 type="submit"

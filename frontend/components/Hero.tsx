@@ -61,15 +61,15 @@ export default function Hero({ onSearch, isLoading }: HeroProps) {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Describe the meme..."
-                className="w-full py-4 md:py-6 pl-12 md:pl-16 pr-14 md:pr-32 text-base md:text-lg text-gray-900 font-medium bg-transparent border-none focus:ring-0 rounded-2xl placeholder:text-gray-400"
+                className="w-full py-3 md:py-6 pl-10 md:pl-16 pr-12 md:pr-32 text-sm md:text-lg text-gray-900 font-medium bg-transparent border-none focus:ring-0 rounded-2xl placeholder:text-gray-400"
               />
               <button
                 type="submit"
                 disabled={isLoading}
-                className="absolute right-2 top-2 bottom-2 md:right-3 md:top-3 md:bottom-3 w-10 md:w-auto px-0 md:px-6 bg-gray-900 text-white rounded-xl font-medium hover:bg-gray-800 transition-colors disabled:opacity-50 flex items-center justify-center"
+                className="absolute right-1.5 top-1.5 bottom-1.5 md:right-3 md:top-3 md:bottom-3 w-10 md:w-auto px-0 md:px-6 bg-gray-900 text-white rounded-xl font-medium hover:bg-gray-800 transition-colors disabled:opacity-50 flex items-center justify-center shadow-md"
               >
                 <span className="hidden md:inline">{isLoading ? "Searching..." : "Search"}</span>
-                <Search className="w-5 h-5 md:hidden" />
+                <Search className="w-4 h-4 md:hidden" />
               </button>
             </div>
           </div>

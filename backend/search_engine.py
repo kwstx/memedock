@@ -67,10 +67,49 @@ class SearchEngine:
                 }
             return None
         except Exception as e:
-            print(f"ERROR in search: {str(e)}")
+            print(f"ERROR in semantic search: {str(e)}")
             import traceback
             traceback.print_exc()
-            # Return a random meme as fallback
+            
+            # Fallback: Keyword Search
+            print("Falling back to keyword search...")
+            query_terms = query.lower().split()
+            best_match = None
+            max_matches = 0
+            
+            for image_name, meme in self.meme_map.items():
+                score = 0
+                # Check tags
+                for tag in meme.get('tags', []):
+                    if any(term in tag.lower() for term in query_terms):
+                        score += 2
+                
+                # Check category
+                if any(term in meme.get('category', '').lower() for term in query_terms):
+                    score += 3
+                    
+                # Check captions
+                for caption in meme.get('captions', []):
+                    if any(term in caption.lower() for term in query_terms):
+                        score += 1
+                        
+                if score > max_matches:
+                    max_matches = score
+                    best_match = image_name
+            
+            if best_match and max_matches > 0:
+                print(f"Keyword match found: {best_match} (Score: {max_matches})")
+                meme_info = self.meme_map[best_match]
+                return {
+                    "image_name": best_match,
+                    "score": 0.5, # Artificial score
+                    "metadata": meme_info,
+                    "image_url": f"/images/{best_match}",
+                    "explanation": f"Found based on keywords matching tags/captions."
+                }
+
+            # If keyword search also fails, return random
+            print("Keyword search failed. Returning random meme.")
             import random
             random_idx = random.randint(0, len(self.image_names) - 1)
             random_image_name = self.image_names[random_idx]
@@ -78,9 +117,9 @@ class SearchEngine:
             if random_meme_info:
                 return {
                     "image_name": random_image_name,
-                    "score": 0.5,
+                    "score": 0.1,
                     "metadata": random_meme_info,
                     "image_url": f"/images/{random_image_name}",
-                    "explanation": f"Search encountered an error. Here's a random meme instead!"
+                    "explanation": f"We couldn't find an exact match, but here is a meme from our vault!"
                 }
             return None

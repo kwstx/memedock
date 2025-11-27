@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ThumbsUp, ThumbsDown, Loader2, ArrowLeft } from "lucide-react";
+import { API_ENDPOINTS } from "@/lib/api";
 
 interface Meme {
     image_name: string;
@@ -24,7 +25,7 @@ export default function VotePage() {
     useEffect(() => {
         const fetchMemes = async () => {
             try {
-                const response = await fetch("http://127.0.0.1:8000/get-all-memes");
+                const response = await fetch(API_ENDPOINTS.getAllMemes());
                 const data = await response.json();
                 setMemes(data.memes);
             } catch (error) {
@@ -57,7 +58,7 @@ export default function VotePage() {
         }));
 
         try {
-            const response = await fetch("http://127.0.0.1:8000/vote", {
+            const response = await fetch(API_ENDPOINTS.vote(), {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -133,7 +134,7 @@ export default function VotePage() {
                             >
                                 <div className="relative aspect-square overflow-hidden bg-gray-100">
                                     <img
-                                        src={`http://127.0.0.1:8000/images/${meme.image_name}`}
+                                        src={API_ENDPOINTS.imageUrl(meme.image_name)}
                                         alt={meme.prompt}
                                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                     />

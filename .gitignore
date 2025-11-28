@@ -1,0 +1,66 @@
+# Deployment files (contain sensitive information)
+DEPLOYMENT_GUIDE.md
+DEPLOYMENT_STEPS.md
+DEPLOYMENT_CHECKLIST.md
+QUICK_START_DEPLOYMENT.md
+
+# Environment variables
+.env
+.env.local
+.env.production
+*.env
+
+# API Keys and Secrets
+secrets/
+*.key
+*.pem
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+backend/venv/
+
+# Node
+node_modules/
+.next/
+out/
+build/
+dist/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+*.tmp
+
+# Local development
+*.local
+
+# AI Model cache
+backend/.cache/
+backend/models/
+
+# Large files
+*.mp4
+*.mov
+*.avi

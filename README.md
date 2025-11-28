@@ -24,47 +24,7 @@ A semantic meme search engine powered by AI that understands context and meaning
 - NumPy
 - PRAW (Reddit API)
 
-## 📦 Local Development
 
-### Prerequisites
-- Node.js 18+ and npm
-- Python 3.10+
-- Git
-
-### Setup
-
-1. **Clone the repository**
-```bash
-git clone https://github.com/YOUR_USERNAME/memehub.git
-cd memehub
-```
-
-2. **Backend Setup**
-```bash
-cd backend
-pip install -r requirements.txt
-python -m uvicorn main:app --reload --port 8000
-```
-
-3. **Frontend Setup**
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-4. **Access the app**
-- Frontend: http://localhost:3000
-- Backend API: http://localhost:8000
-
-## 🌐 Deployment
-
-See [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) for detailed deployment instructions.
-
-**Quick Deploy:**
-- Frontend → Vercel
-- Backend → Railway
-- Total Cost: Free tier available
 
 ## 📁 Project Structure
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, Rocket, Heart, ArrowLeft, Github, Twitter, Linkedin } from "lucide-react";
+import { Code2, Rocket, Heart, ArrowLeft, Github } from "lucide-react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 
@@ -74,14 +74,13 @@ export default function AboutPage() {
                                 </div>
 
                                 <div className="flex gap-4 mt-8">
-                                    <a href="#" className="p-3 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors text-gray-700">
+                                    <a
+                                        href="https://github.com/kwstx/memedock"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="p-3 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors text-gray-700"
+                                    >
                                         <Github className="w-5 h-5" />
-                                    </a>
-                                    <a href="#" className="p-3 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors text-gray-700">
-                                        <Twitter className="w-5 h-5" />
-                                    </a>
-                                    <a href="#" className="p-3 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors text-gray-700">
-                                        <Linkedin className="w-5 h-5" />
                                     </a>
                                 </div>
                             </div>
